@@ -1,0 +1,34 @@
+// modules
+@import './core'
+@import '~bulma'
+// @import '~slick-carousel/slick/slick'
+
+
+html, body
+  min-height: 100%
+  +noto
+  margin-bottom: 0
+  width: 100%
+  height: 100%
+  overflow-x: hidden
+
+body
+  -webkit-text-size-adjust: 100%
+
+main
+  display: block
+
+// strong
+//   color: unset
+
+// em
+//   font-style: normal
+
+html.is-modal-active
+  overflow: hidden
+  body
+    overflow: hidden
+
+@import './global/index'
+@import './custom/index'
+

@@ -1,0 +1,46 @@
+@charset "utf-8"
+
+=rwd-padding
+  padding: 0 90px
+  +mobile-mini
+    padding: 0 15px
+  +desktop
+    padding: 0 70px
+
+
+=pb($size, $sp_size: false)
+  &:not(:last-child)
+    padding-bottom: $size * 1px
+  @if $sp_size
+    &:not(:last-child)
+      padding-bottom: $sp_size * 1px
+      +desktop
+        padding-bottom: $size * 1px
+
+=pr($size, $sp_size: false)
+  &:not(:last-child)
+    padding-right: $size * 1px
+  @if $sp_size
+    &:not(:last-child)
+      padding-right: $sp_size * 1px
+      +desktop
+        padding-right: $size * 1px
+
+=pl($size, $sp_size: false)
+  &:not(:first-child)
+    padding-left: $size * 1px
+  @if $sp_size
+    &:not(:first-child)
+      padding-left: $sp_size * 1px
+      +desktop
+        padding-left: $size * 1px
+
+=pt($size, $sp_size: false)
+  &:not(:first-child)
+    padding-top: $size * 1px
+  @if $sp_size
+    &:not(:first-child)
+      padding-top: $sp_size * 1px
+      +desktop
+        padding-top: $size * 1px
+

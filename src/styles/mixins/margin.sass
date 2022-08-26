@@ -1,0 +1,38 @@
+@charset "utf-8"
+
+=mb($size, $sp_size: false)
+  &:not(:last-child)
+    margin-bottom: $size * 1px
+  @if $sp_size
+    &:not(:last-child)
+      margin-bottom: $sp_size * 1px
+      +desktop
+        margin-bottom: $size * 1px
+
+=mr($size, $sp_size: false)
+  &:not(:last-child)
+    margin-right: $size * 1px
+  @if $sp_size
+    &:not(:last-child)
+      margin-right: $sp_size * 1px
+      +desktop
+        margin-right: $size * 1px
+
+=ml($size, $sp_size: false)
+  &:not(:first-child)
+    margin-left: $size * 1px
+  @if $sp_size
+    &:not(:first-child)
+      margin-left: $sp_size * 1px
+      +desktop
+        margin-left: $size * 1px
+
+=mt($size, $sp_size: false)
+  &:not(:first-child)
+    margin-top: $size * 1px
+  @if $sp_size
+    &:not(:first-child)
+      margin-top: $sp_size * 1px
+      +desktop
+        margin-top: $size * 1px
+

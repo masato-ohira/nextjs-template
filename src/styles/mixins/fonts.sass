@@ -1,0 +1,42 @@
+@charset "utf-8"
+
+// font-family
+// ------------------------------
+=noto
+  font-family: 'Noto Sans JP', sans-serif
+
+=serif
+  font-family: 'Noto Serif JP', serif
+
+=ttl
+  font-family: 'Noto Serif JP', serif
+  font-weight: 500
+
+=en-text
+  font-family: 'Montserrat', serif
+
+// font-style
+// ------------------------------
+=letter($size: 1)
+  font-feature-settings: "palt" $size, "jp90"
+
+  .safari &
+    font-feature-settings: "pkna" 1
+
+// font-size
+// ------------------------------
+=rem($size: 1, $sp_size: false)
+  $ratio: 0.625
+  font-size: $size * $ratio * 1rem
+
+  @if $sp_size
+    font-size: $sp_size * $ratio * 1rem
+    +desktop
+      font-size: $size * $ratio * 1rem
+
+=fz($size: 1rem, $sp: false)
+  font-size: $size
+  @if $sp
+    font-size: $sp
+    +desktop
+      font-size: $size

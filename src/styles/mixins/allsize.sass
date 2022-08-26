@@ -1,0 +1,19 @@
+@charset "utf-8"
+
+=allsize($size: 10, $sp_size: null)
+  font-size: $size * 1px
+  width: $size * 1px
+  height: $size * 1px
+  line-height: $size * 1px
+
+  @if $sp_size
+    +desktop
+      font-size: $size * 1px
+      width: $size * 1px
+      height: $size * 1px
+      line-height: $size * 1px
+    +touch
+      font-size: $sp_size * 1px
+      width: $sp_size * 1px
+      height: $sp_size * 1px
+      line-height: $sp_size * 1px
