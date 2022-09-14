@@ -1,4 +1,4 @@
-import '@/styles/app.sass'
+import '@/styles/app.scss'
 import type { AppProps } from 'next/app'
 import Layout from '@/layouts/default'
 import Head from 'next/head'

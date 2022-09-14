@@ -1,11 +1,13 @@
 # nextjs-starter
 
-## git-ftp
+## Install
 
 ```
-[git-ftp "clients"]
-  url = ftp://clients.ekzm.co.jp
-  remote-root= /tiktok-modoki/
-  syncroot = dist
-  user = clientsftp
+yarn
+```
+
+## Development
+
+```
+yarn dev
 ```

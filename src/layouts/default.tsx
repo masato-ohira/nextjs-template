@@ -1,7 +1,15 @@
 import { ReactElement } from 'react'
-// import Header from '@/layouts/header'
-// import FooterMenu from '@/components/footer/footer-menu'
-import styles from './default.module.sass'
+import { css } from '@emotion/react'
+import { mq } from '@/styles/cmn.styles'
+
+const styles = () => {
+  return css`
+    padding: 15px;
+    ${mq('md')} {
+      padding: 30px 0;
+    }
+  `
+}
 
 type LayoutProps = Required<{
   readonly children: ReactElement
@@ -9,10 +17,7 @@ type LayoutProps = Required<{
 
 const Layout = ({ children }: LayoutProps) => (
   <>
-    <div className={styles.default}>
-      {children}
-      {/* <FooterMenu /> */}
-    </div>
+    <div css={styles()}>{children}</div>
   </>
 )
 
