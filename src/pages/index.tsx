@@ -2,6 +2,8 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { css } from '@emotion/react'
 import { colors, mq } from '@/styles/cmn.styles'
+import { useSelector } from 'react-redux'
+import { siteData } from '@/store/site'
 
 const styles = () => {
   return css`
@@ -30,13 +32,16 @@ const styles = () => {
 }
 
 const Home: NextPage = () => {
+  const { name: siteName } = useSelector(siteData)
+
   return (
     <>
       <Head>
-        <title>my-app</title>
+        <title>{siteName}</title>
       </Head>
       <div className='container' css={styles()}>
         <div className='box'>
+          <div className='title is-5 has-text-centered'>{siteName}</div>
           <div className='buttons is-centered'>
             <div className='button'>BUTTON</div>
           </div>
