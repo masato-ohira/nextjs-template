@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import sleep from 'sleep-promise'
 
 function useFetch(url: string, config: {}) {
   const [isLoading, setIsLoading]: [boolean, Function] = useState(true)
