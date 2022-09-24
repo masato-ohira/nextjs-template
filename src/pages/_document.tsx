@@ -20,10 +20,10 @@ class MyDocument extends Document {
           <meta name='theme-color' content='#000' />
 
           <link
+            rel='stylesheet'
             href={`https://fonts.googleapis.com/icon?family=${fontIcons.join(
               '%7C',
             )}`}
-            rel='stylesheet'
           />
           <link rel='preconnect' href='https://fonts.googleapis.com' />
           <link
@@ -32,6 +32,7 @@ class MyDocument extends Document {
             crossOrigin=''
           />
           <link
+            rel='stylesheet'
             href={`https://fonts.googleapis.com/css2?${fontFamilies.join('&')}`}
           />
         </Head>
