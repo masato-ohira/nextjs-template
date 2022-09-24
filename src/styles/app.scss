@@ -1,4 +1,5 @@
-@import '~bulma';
+@use '~bulma' as *;
+@use '~loaders.css' as *;
 
 html,
 body {
