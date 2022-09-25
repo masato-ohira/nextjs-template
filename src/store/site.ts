@@ -25,6 +25,3 @@ export const siteSlice = createSlice({
   initialState,
   reducers: {},
 })
-
-export const { siteData, colors } = getters
-export const siteReducer = siteSlice.reducer

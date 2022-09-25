@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { siteReducer } from './site'
+import { siteSlice } from './site'
+import { sheetsSlice } from './sheets'
 
 export const store = configureStore({
   reducer: {
-    site: siteReducer,
+    site: siteSlice.reducer,
+    sheets: sheetsSlice.reducer,
   },
 })
 
