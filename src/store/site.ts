@@ -1,5 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { colors as styleColors } from '@/styles/cmn.styles'
+import { createSlice, createSelector } from '@reduxjs/toolkit'
+import { colors as styleColors } from '@/styles/colors'
+import { RootState } from '@/store'
 
 export type SiteState = {
   name: string
@@ -11,13 +12,15 @@ const initialState: SiteState = {
   colors: styleColors,
 }
 
-export const getters = {
-  siteData: (state: any) => {
-    return state.site
-  },
-  colors: (state: any) => {
-    return state.site.colors
-  },
+export const selectors = {
+  siteData: createSelector(
+    (state: RootState) => state.site,
+    (data) => data,
+  ),
+  colors: createSelector(
+    (state: RootState) => state.site.colors,
+    (colors) => colors,
+  ),
 }
 
 export const siteSlice = createSlice({

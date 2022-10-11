@@ -1,5 +1,6 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk, createSelector } from '@reduxjs/toolkit'
 import axios from 'axios'
+import { RootState } from '@/store'
 
 type stateType = {
   ready: boolean
@@ -11,13 +12,20 @@ const initialState: stateType = {
   all: {},
 }
 
-export const getters = {
-  isReady: (state: any) => state.sheets.ready,
-  getSheet: (id: string) => (state: any) => {
-    return state.sheets.all[id]
+export const selectors = {
+  isReady: createSelector(
+    (state: RootState) => state.sheets.ready,
+    (ready) => ready,
+  ),
+
+  getSheet: (id: string) => {
+    return createSelector(
+      (state: RootState) => state.sheets.all,
+      (sheets) => sheets[id],
+    )
   },
 }
-export const { getSheet, isReady } = getters
+export const { getSheet, isReady } = selectors
 
 export const fetchData: any = createAsyncThunk('sheets/fetchData', async () => {
   const url = `https://jsonplaceholder.typicode.com/todos`

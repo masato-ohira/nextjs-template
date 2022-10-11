@@ -1,63 +1,60 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { css } from '@emotion/react'
-import { colors, mq } from '@/styles/cmn.styles'
+import { times } from 'lodash'
+
+// store
 import { useSelector } from 'react-redux'
-import { getters as siteGetters } from '@/store/site'
-import { getters as sheetsGetters } from '@/store/sheets'
+import { selectors } from '@/store/site'
+
+// components
+import {
+  Container,
+  Button,
+  Text,
+  Table,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+} from '@chakra-ui/react'
 
 const Home: NextPage = () => {
-  const { name: siteName } = useSelector(siteGetters.siteData)
-  const samples = useSelector(sheetsGetters.getSheet('samples'))
+  const { name: siteName } = useSelector(selectors.siteData)
+  const samples = times(8, (n) => {
+    const num: number = n + 1
+    return {
+      id: num,
+      title: `title ${num}`,
+    }
+  })
 
   return (
     <>
       <Head>
         <title>{siteName}</title>
       </Head>
-      <div className='container' css={styles.container}>
-        <div className='title is-5 has-text-centered'>{siteName}</div>
-        <table className='table is-bordered is-fullwidth'>
-          <tbody>
+      <Container maxW={'container.xl'}>
+        <Text fontSize={'4xl'} fontWeight={'bold'}>
+          {siteName}
+        </Text>
+        <Table>
+          <Tbody>
             {samples.map((i: any, key: number) => {
               return (
-                <tr key={key}>
-                  <td>{i.id}</td>
-                  <td>{i.title}</td>
-                </tr>
+                <Tr key={key}>
+                  <Th width={20}>{i.id}</Th>
+                  <Td width={40}>{i.title}</Td>
+                  <Td>
+                    <Button colorScheme={'link'}>詳細はこちら</Button>
+                  </Td>
+                </Tr>
               )
             })}
-          </tbody>
-        </table>
-      </div>
+          </Tbody>
+        </Table>
+      </Container>
     </>
   )
-}
-
-const styles = {
-  container: css`
-    .box {
-      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 0 0;
-
-      .button {
-        background-color: ${colors.link};
-        border-color: ${colors.link};
-        color: #fff;
-        transition-property: all;
-        transition-duration: 0.2s;
-        transition-timing-function: linear;
-
-        ${mq('lg')} {
-          background-color: ${colors.primary};
-          border-color: ${colors.primary};
-        }
-
-        &:hover {
-          opacity: 0.8;
-        }
-      }
-    }
-  `,
 }
 
 export default Home

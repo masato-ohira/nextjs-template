@@ -1,5 +1,5 @@
 import { css } from '@emotion/react'
-import { colors } from '@/styles/cmn.styles'
+import { colors } from '@/styles/colors'
 
 interface propsTypes {
   color?: string
