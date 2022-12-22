@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { times } from 'lodash'
+import { times } from 'lodash-es'
 
 // store
 import { useSelector } from 'react-redux'

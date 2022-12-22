@@ -1,7 +1,6 @@
 import type { AppProps } from 'next/app'
 import { store } from '@/store/index'
 import { css, Global } from '@emotion/react'
-import emotionNormalize from 'emotion-normalize'
 import { rgba } from '@/styles/colors'
 import { fonts } from '@/styles/fonts'
 
@@ -10,7 +9,6 @@ import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import Head from 'next/head'
 
 const globalStyle = css`
-  /* ${emotionNormalize} */
   html,
   body {
     min-height: 100%;
