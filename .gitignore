@@ -10,6 +10,7 @@ yarn-error.log*
 .htaccess
 
 uploads/
+dist
 _bk
 
 # Runtime data
