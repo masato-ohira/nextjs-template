@@ -1,6 +1,6 @@
 # my setting
 dist/cache
-# dist
+dist
 .htaccess
 .env
 styled-system
