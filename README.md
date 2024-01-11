@@ -1,13 +1,15 @@
 # nextjs-starter
 
-## Install
+## Getting Started
 
-```
-yarn
-```
+First, run the development server:
 
-## Development
-
-```
+```bash
+npm run dev
+# or
 yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
